@@ -1,25 +1,27 @@
-package edu.jsp.Programming;
+package edu.jsp.random;
+
+import java.util.Scanner;
 
 public class XylemPhloem {
 	public static void main(String[] args) {
-		int num = 65212;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter a number : ");//65212
+		int num = sc.nextInt();
 		int temp = num;
+		int fl = temp%10;
 		int mid = 0;
-		int last = temp%10;
-		temp = temp/10;
-		
+		temp/=10;
 		while(temp>9) {
-			int last1 = temp%10;
+			int last = temp%10;
 			mid = mid+last;
-			temp = temp/10;
+			temp/=10;
 		}
-		int sum = last+temp;
-		if(sum==mid) {
-			System.out.println("Xylem");
+		fl+=temp;
+		if(fl==mid) {
+			System.out.println("num is xylem...");
 		}
 		else {
-			System.out.println("Phloem");
+			System.out.println("num is phloem...");
 		}
-		
 	}
 }
